@@ -1,0 +1,21 @@
+{
+  "name": "rdar",
+  "version": "0.0.0",
+  "description": "recursive dereference and replace",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git:rdar.git"
+  },
+  "keywords": [
+    "recursive",
+    "dereference",
+    "replace",
+    "view"
+  ],
+  "author": "ben@devaddins.com",
+  "license": "ISC"
+}
