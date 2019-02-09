@@ -43,8 +43,7 @@ Your order has shipped and will arrive on {{arrival-date}}
 {[/orders]}
 ```
 
-... the final string will look like this ...
-
+... the output will look like this ...
 
 ``` txt
 Dear Customer One:
@@ -56,4 +55,43 @@ Your order has shipped and will arrive on 3/3/2019
 Dear Customer Also:
 Your order has shipped and will arrive on 9/9/2019
 ```
+# Element Placeholders
 
+Element placeholders can reach down the object tree and they can also be functions. For example given this object...
+
+```js 
+let greet = {
+    space: ' ',
+    eol: '\n',
+    greeting: 'Nope!',
+    planets: {
+        bang: '!',
+        rand: {
+            planet: function() {
+                let plns = ['Mercury', 'Venus', 'Earth', 'Mars', 
+                'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
+                return plns[Math.floor(Math.random()*plns.length)];
+            }
+        } 
+    }, 
+    greetings: [
+        {greeting: 'Good Morning'}, 
+        {greeting: 'Good Afternoon'}, 
+        {greeting: 'Good Night'}
+    ]
+}
+```
+
+... and given this template ...
+
+```js
+let template = '{[greetings]}{{greeting}}{{space}}{{planets.rand.planet}}{{planets.bang}}{{eol}}{[/greetings]}';
+```
+
+... the output will look something like this ...
+
+```txt
+Good Morning Jupiter!
+Good Afternoon Jupiter!
+Good Night Jupiter!
+```
