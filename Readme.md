@@ -61,11 +61,8 @@ Element placeholders can reach down the object tree and they can also be functio
 
 ```js 
 let greet = {
-    space: ' ',
     eol: '\n',
-    greeting: 'Nope!',
     planets: {
-        bang: '!',
         rand: {
             planet: function() {
                 let plns = ['Mercury', 'Venus', 'Earth', 'Mars', 
@@ -85,7 +82,7 @@ let greet = {
 ... and given this template ...
 
 ```js
-let template = '{[greetings]}{{greeting}}{{space}}{{planets.rand.planet}}{{planets.bang}}{{eol}}{[/greetings]}';
+let template = '{[greetings]}{{greeting}} {{planets.rand.planet}}{{eol}}{[/greetings]}';
 ```
 
 ... the output will look something like this ...
