@@ -1,5 +1,5 @@
 {
-  "name": "rdar",
+  "name": "com.devaddins.rdar",
   "version": "0.0.0",
   "description": "recursive dereference and replace",
   "main": "index.js",
